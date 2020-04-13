@@ -137,9 +137,12 @@ const finishGame = (game) => {
 
 const addCanvasHandler = (game) => {
   const canvas = document.querySelector('.canvas');
+  const pauseBtn = document.querySelector('#pause');
+
   canvas.addEventListener('click', (e) => {
     if (game.isStarted()) {
       if (gameTime.isPause) {
+        pauseBtn.innerText = 'Стоп';
         gameTime.resume();
       }
       game.move(e.offsetX, e.offsetY);
