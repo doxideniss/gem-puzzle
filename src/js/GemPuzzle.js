@@ -65,8 +65,8 @@ class GemPuzzle {
     let moveY = 0;
     const step = this.cellSize / 30;
     const drawing = setInterval(() => {
-      if (Math.abs(+moveX.toFixed(2)) === this.cellSize
-          || Math.abs(+moveY.toFixed(2)) === this.cellSize) {
+      if (Math.abs(+moveX.toFixed(2)) === +this.cellSize.toFixed(2)
+          || Math.abs(+moveY.toFixed(2)) === +this.cellSize.toFixed(2)) {
         clearInterval(drawing);
       }
       this.ctx.clearRect(
