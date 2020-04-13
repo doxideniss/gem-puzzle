@@ -139,6 +139,9 @@ const addCanvasHandler = (game) => {
   const canvas = document.querySelector('.canvas');
   canvas.addEventListener('click', (e) => {
     if (game.isStarted()) {
+      if (gameTime.isPause) {
+        gameTime.resume();
+      }
       game.move(e.offsetX, e.offsetY);
       setSteps(game.getClicks());
       if (game.isWin()) {
